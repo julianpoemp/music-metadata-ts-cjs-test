@@ -1,4 +1,4 @@
-import { parseFile, parseStream } from 'music-metadata';
+import { parseStream } from 'music-metadata';
 import { createReadStream } from 'node:fs';
 
 async function main() {
@@ -7,7 +7,7 @@ async function main() {
     const audioStream = createReadStream('src/assets/EinsZweiDrei.wav');
 
     // Parse the metadata from the stream
-    const metadata = await parseStream(audioStream, { mimeType: 'audio/mpeg'});
+    const metadata = await parseStream(audioStream, { mimeType: 'audio/wav' });
 
     // Log the parsed metadata
     console.log(metadata);
